@@ -1,4 +1,4 @@
-# serializers.py
+# users/serializers.py
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
@@ -10,7 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'email', 'password', 'role']
-        extra_kwargs = {'password': {'write_only': True}}
+        extra_kwargs = {
+            'password': {'write_only': True},
+            'id': {'read_only': True}
+        }
 
     def create(self, validated_data):
         user = User.objects.create_user(
@@ -23,14 +26,14 @@ class UserSerializer(serializers.ModelSerializer):
 
 class LoginSerializer(serializers.Serializer):
     """Serializer for user login."""
-    email = serializers.EmailField()
-    password = serializers.CharField(write_only=True)
+    email = serializers.EmailField(help_text="Email address of the user")
+    password = serializers.CharField(write_only=True, help_text="User's password")
 
 class InviteUserSerializer(serializers.Serializer):
     """Serializer for inviting users."""
-    email = serializers.EmailField()
+    email = serializers.EmailField(help_text="Email address of the user to invite")
 
     def validate_email(self, value):
         if User.objects.filter(email=value).exists():
-            return value  # Allow existing users
+            return value
         return value

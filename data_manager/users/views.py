@@ -1,4 +1,4 @@
-# views.py
+# users/views.py
 import logging
 from django.contrib.auth import authenticate, logout, get_user_model
 from rest_framework.authtoken.models import Token
@@ -6,19 +6,41 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
 from .serializers import UserSerializer, LoginSerializer, InviteUserSerializer
 from .permissions import IsAdminUser
-from rest_framework.authentication import TokenAuthentication  # Added for explicit token requirement
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiExample
 
-# Configure logging
 logger = logging.getLogger(__name__)
-
 User = get_user_model()
 
 class RegisterView(APIView):
+    """
+    Register a new user without authentication.
+    """
     authentication_classes = []
     permission_classes = []
 
+    @extend_schema(
+        request=UserSerializer,
+        responses={
+            201: OpenApiResponse(
+                response=UserSerializer,
+                description="User registered successfully",
+                examples=[
+                    OpenApiExample(
+                        "Success",
+                        value={
+                            "message": "User registered successfully!",
+                            "user": {"id": 1, "email": "test@example.com", "role": "user"},
+                            "token": "some-token-string"
+                        }
+                    )
+                ]
+            ),
+            400: OpenApiResponse(description="Invalid input data")
+        }
+    )
     def post(self, request):
         logger.info(f"Registration attempt with data: {request.data}")
         serializer = UserSerializer(data=request.data)
@@ -39,9 +61,28 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(APIView):
-    authentication_classes = [TokenAuthentication]  # Token required
-    permission_classes = [IsAuthenticated]          # Ensures user is authenticated
+    """
+    Log in a user with a valid token (re-authentication).
+    Requires Token Authentication.
+    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        request=LoginSerializer,
+        responses={
+            200: OpenApiResponse(
+                description="Login successful",
+                examples=[
+                    OpenApiExample(
+                        "Success",
+                        value={"token": "some-token-string", "role": "user"}
+                    )
+                ]
+            ),
+            401: OpenApiResponse(description="Invalid credentials or unauthorized")
+        }
+    )
     def post(self, request):
         logger.info(f"Login attempt for email: {request.data.get('email')}")
         serializer = LoginSerializer(data=request.data)
@@ -63,9 +104,22 @@ class LoginView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LogoutView(APIView):
-    authentication_classes = [TokenAuthentication]  # Token required (explicitly added for clarity)
+    """
+    Log out an authenticated user.
+    Requires Token Authentication.
+    """
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        responses={
+            200: OpenApiResponse(
+                description="Logout successful",
+                examples=[OpenApiExample("Success", value={"message": "Logged out successfully"})]
+            ),
+            400: OpenApiResponse(description="Logout failed")
+        }
+    )
     def post(self, request):
         try:
             logger.info(f"Logout attempt for user: {request.user.email}")
@@ -78,21 +132,37 @@ class LogoutView(APIView):
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 class InviteUserView(APIView):
-    authentication_classes = [TokenAuthentication]  # Token required (explicitly added for clarity)
+    """
+    Invite a user (admin only).
+    Requires Token Authentication and admin role.
+    """
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated, IsAdminUser]
 
+    @extend_schema(
+        request=InviteUserSerializer,
+        responses={
+            200: OpenApiResponse(
+                description="User already exists",
+                examples=[OpenApiExample("Exists", value={"message": "User already exists in the system!"})]
+            ),
+            201: OpenApiResponse(
+                description="Invitation logged",
+                examples=[OpenApiExample("Invited", value={"message": "User invited successfully (no email sent)!"})]
+            ),
+            403: OpenApiResponse(description="Permission denied (non-admin)")
+        }
+    )
     def post(self, request):
         logger.info(f"Invite attempt by {request.user.email} for: {request.data.get('email')}")
         serializer = InviteUserSerializer(data=request.data)
         if serializer.is_valid():
             email = serializer.validated_data["email"]
             user = User.objects.filter(email=email).first()
-
             if user:
                 logger.info(f"Existing user {email} found")
                 return Response({"message": "User already exists in the system!"}, 
                               status=status.HTTP_200_OK)
-            
             logger.info(f"New user {email} invited (no email sent)")
             return Response({"message": "User invited successfully (no email sent)!"}, 
                           status=status.HTTP_201_CREATED)
