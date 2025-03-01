@@ -1,0 +1,28 @@
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'testuser@example.com', 'password': 'test123', 'role': 'user'}
+User testuser@example.com registered successfully
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123', 'role': 'admin'}
+Invalid registration data: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+Bad Request: /users/register/
+Registration attempt with data: {'email': 'admin123@example.com', 'password': 'admin123', 'role': 'admin'}
+User admin123@example.com registered successfully
+Unauthorized: /users/login/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Login attempt for email: testuser@example.com
+User testuser@example.com logged in successfully
+Unauthorized: /users/login/
+Logout attempt for user: testuser@example.com
+Logout successful
+Invite attempt by admin123@example.com for: testuser@example.com
+Existing user testuser@example.com found
+Invite attempt by admin123@example.com for: newuser@example.com
+New user newuser@example.com invited (no email sent)
+Unauthorized: /users/invite/
