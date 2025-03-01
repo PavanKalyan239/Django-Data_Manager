@@ -57,3 +57,36 @@ Registration attempt with data: {'email': 'admin12@example.com', 'password': 'ad
 User admin12@example.com registered successfully
 Login attempt for email: testuser@example.com
 User testuser@example.com logged in successfully
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'test@example.com', 'password': 'test123'}
+Registration failed: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x000001E0F8531130>": "CustomUser.created_by" must be a "CustomUser" instance.
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'test@example.com', 'password': 'test123'}
+User test@example.com registered successfully
+Registration attempt with data: {'email': 'user1@example.com', 'password': 'user123'}
+User user1@example.com registered successfully
+Registration attempt with data: {'email': 'invalid', 'password': 'short'}
+Invalid registration data: {'email': [ErrorDetail(string='Invalid email format', code='invalid'), ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+Bad Request: /users/register/
+Login attempt for email: test@example.com
+User test@example.com logged in successfully
+Logout attempt for user: test@example.com
+Logout successful
+Unauthorized: /users/logout/
+Unauthorized: /users/invite/
+Unauthorized: /users/invite/
+Registration attempt with data: {'email': 'test2@example.com', 'password': 'test123'}
+User test2@example.com registered successfully
+Login attempt for email: test2@example.com
+User test2@example.com logged in successfully
+Invite attempt by test2@example.com for: newuser@example.com
+New user newuser@example.com invited (no email sent)
+Bad Request: /users/8/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
