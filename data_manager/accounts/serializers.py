@@ -1,3 +1,4 @@
+# accounts/serializers.py
 from rest_framework import serializers
 from .models import Account, AccountMember
 from users.models import CustomUser, Role
@@ -5,8 +6,13 @@ from users.models import CustomUser, Role
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ['id', 'name', 'created_at', 'updated_at']
-        extra_kwargs = {'id': {'read_only': True}, 'created_at': {'read_only': True}, 'updated_at': {'read_only': True}}
+        fields = ['id', 'name', 'app_secret_token', 'created_at', 'updated_at']  # Added app_secret_token
+        extra_kwargs = {
+            'id': {'read_only': True},
+            'app_secret_token': {'read_only': True},  # Prevent manual edits
+            'created_at': {'read_only': True},
+            'updated_at': {'read_only': True}
+        }
 
     def create(self, validated_data):
         request = self.context['request']

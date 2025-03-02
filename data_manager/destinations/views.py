@@ -1,10 +1,12 @@
 # destinations/views.py
 import uuid
+import logging
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.throttling import UserRateThrottle  # Add DRF throttling
 from .models import Destination, Log
 from accounts.models import Account
 from .serializers import DestinationSerializer, LogSerializer
@@ -12,21 +14,18 @@ from users.permissions import IsAccountMember, IsAdminUser
 from .tasks import send_to_destination
 from drf_spectacular.utils import extend_schema
 from django.core.cache import cache
-try:
-    from ratelimit.decorators import ratelimit
-except ImportError:
-    def ratelimit(*args, **kwargs):
-        return lambda x: x  # Dummy decorator if ratelimit is unavailable
+
+logger = logging.getLogger(__name__)
 
 class DataHandlerView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+    throttle_classes = [UserRateThrottle]  # Apply DRF throttling
 
     @extend_schema(
         request={'type': 'object'},
         responses={200: {'type': 'object', 'properties': {'message': {'type': 'string'}}}}
     )
-    @ratelimit(key='user', rate='5/s', method='POST', block=True)
     def post(self, request):
         app_secret_token = request.headers.get('CL-X-TOKEN')
         event_id = request.headers.get('CL-X-EVENT-ID', str(uuid.uuid4()))
@@ -36,11 +35,21 @@ class DataHandlerView(APIView):
         if not request.data or not isinstance(request.data, dict):
             return Response({"error": "Invalid Data"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Handle multiple accounts by selecting the first one
-        accounts = Account.objects.filter(members__user=request.user)
-        if not accounts.exists():
-            return Response({"error": "No account found for this user"}, status=status.HTTP_403_FORBIDDEN)
-        account = accounts.first()  # Could enhance with account_id from request if needed
+        try:
+            uuid.UUID(app_secret_token)
+            account = Account.objects.get(members__user=request.user, app_secret_token=app_secret_token)
+        except ValueError:
+            logger.warning(f"Invalid CL-X-TOKEN format received: {app_secret_token}")
+            return Response({"error": "Invalid CL-X-TOKEN format; must be a UUID"}, status=status.HTTP_400_BAD_REQUEST)
+        except Account.DoesNotExist:
+            logger.warning(f"Invalid CL-X-TOKEN used: {app_secret_token}")
+            return Response({"error": "Invalid CL-X-TOKEN or no matching account"}, status=status.HTTP_403_FORBIDDEN)
+        except Account.MultipleObjectsReturned:
+            logger.error(f"Multiple accounts matched for CL-X-TOKEN: {app_secret_token}")
+            return Response({"error": "Multiple accounts matched; specify a unique CL-X-TOKEN"}, status=status.HTTP_403_FORBIDDEN)
+        except Exception as e:
+            logger.error(f"Unexpected error while verifying CL-X-TOKEN: {str(e)}")
+            return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         destinations = Destination.objects.filter(account=account)
         if not destinations.exists():
@@ -57,6 +66,7 @@ class DataHandlerView(APIView):
                 )
                 send_to_destination.delay(log.id)
             except Exception as e:
+                logger.error(f"Failed to create log: {str(e)}")
                 return Response({"error": f"Failed to create log: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         return Response({"message": "Data Received"}, status=status.HTTP_200_OK)

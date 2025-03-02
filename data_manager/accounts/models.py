@@ -1,9 +1,12 @@
+# accounts/models.py
 from django.db import models
 from django.utils import timezone
 from users.models import CustomUser, Role
+import uuid
 
 class Account(models.Model):
     name = models.CharField(max_length=255, unique=True, db_index=True)
+    app_secret_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='created_accounts')
