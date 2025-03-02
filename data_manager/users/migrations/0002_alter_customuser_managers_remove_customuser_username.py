@@ -1,4 +1,3 @@
-# users/migrations/0002_populate_roles.py (example filename)
 from django.db import migrations
 
 def populate_roles(apps, schema_editor):

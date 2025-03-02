@@ -1,4 +1,3 @@
-# users/models.py
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils import timezone
@@ -24,7 +23,7 @@ class CustomUserManager(BaseUserManager):
 
 class Role(models.Model):
     id = models.AutoField(primary_key=True)
-    role_name = models.CharField(max_length=50, unique=True)
+    role_name = models.CharField(max_length=50, unique=True, db_index=True)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -32,13 +31,8 @@ class Role(models.Model):
         return self.role_name
 
 class CustomUser(AbstractUser):
-    ROLE_CHOICES = (
-        ('admin', 'Admin'),
-        ('user', 'Normal User'),
-    )
     username = None
-    email = models.EmailField(unique=True)
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
+    email = models.EmailField(unique=True, db_index=True)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, related_name='created_users')

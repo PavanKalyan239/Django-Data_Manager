@@ -1,4 +1,3 @@
-# users/views.py
 import logging
 from django.contrib.auth import authenticate, logout, get_user_model
 from rest_framework.authtoken.models import Token
@@ -10,7 +9,8 @@ from rest_framework.authentication import TokenAuthentication
 from .serializers import UserSerializer, LoginSerializer, InviteUserSerializer
 from .permissions import IsAdminUser
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiExample
-from django.db.models import Q
+from accounts.models import Account, AccountMember
+from .models import Role
 
 logger = logging.getLogger(__name__)
 User = get_user_model()
@@ -46,14 +46,14 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(APIView):
-    authentication_classes = []  # Public access
+    authentication_classes = []
     permission_classes = []
 
     @extend_schema(
         request=LoginSerializer,
         responses={
             200: OpenApiResponse(description="Login successful", examples=[
-                OpenApiExample("Success", value={"token": "some-token", "role": "user"})
+                OpenApiExample("Success", value={"token": "some-token"})
             ]),
             401: OpenApiResponse(description="Invalid credentials")
         }
@@ -63,13 +63,14 @@ class LoginView(APIView):
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():
             user = authenticate(
-                email=serializer.validated_data['email'],
+                request=request,
+                username=serializer.validated_data['email'],
                 password=serializer.validated_data['password']
             )
             if user:
-                token, created = Token.objects.get_or_create(user=user)
+                token, _ = Token.objects.get_or_create(user=user)
                 logger.info(f"User {user.email} logged in successfully")
-                return Response({"token": token.key, "role": user.role}, status=status.HTTP_200_OK)
+                return Response({"token": token.key}, status=status.HTTP_200_OK)
             logger.warning("Invalid login credentials")
             return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
         logger.warning(f"Invalid login data: {serializer.errors}")
@@ -105,9 +106,7 @@ class InviteUserView(APIView):
     @extend_schema(
         request=InviteUserSerializer,
         responses={
-            201: OpenApiResponse(description="User invited", examples=[
-                OpenApiExample("Invited", value={"message": "User invited successfully (no email sent)!"})
-            ]),
+            201: OpenApiResponse(description="User invited"),
             400: OpenApiResponse(description="Invalid data")
         }
     )
@@ -116,13 +115,34 @@ class InviteUserView(APIView):
         serializer = InviteUserSerializer(data=request.data)
         if serializer.is_valid():
             email = serializer.validated_data["email"]
+            account_id = serializer.validated_data['account_id']
+            if not Account.objects.filter(id=account_id, members__user=request.user, members__role__role_name='Admin').exists():
+                return Response({"error": "Invalid or unauthorized account"}, status=status.HTTP_403_FORBIDDEN)
             user = User.objects.filter(email=email).first()
             if user:
                 logger.info(f"Existing user {email} found")
-                return Response({"message": "User already exists in the system!"}, status=status.HTTP_200_OK)
-            # Defer full implementation until accounts app
-            logger.info(f"New user {email} invited (no email sent)")
-            return Response({"message": "User invited successfully (no email sent)!"}, status=status.HTTP_201_CREATED)
+                AccountMember.objects.get_or_create(
+                    account_id=account_id,
+                    user=user,
+                    defaults={'role': Role.objects.get(role_name='Normal user'), 'created_by': request.user, 'updated_by': request.user}
+                )
+                return Response({"message": "User added to account!"}, status=status.HTTP_200_OK)
+            import secrets
+            new_user = User.objects.create_user(
+                email=email,
+                password=secrets.token_hex(16),
+                created_by=request.user,
+                updated_by=request.user
+            )
+            AccountMember.objects.create(
+                account=Account.objects.get(id=account_id),
+                user=new_user,
+                role=Role.objects.get(role_name='Normal user'),
+                created_by=request.user,
+                updated_by=request.user
+            )
+            logger.info(f"New user {email} invited and added to account")
+            return Response({"message": "User invited and added to account!"}, status=status.HTTP_201_CREATED)
         logger.warning(f"Invalid invite data: {serializer.errors}")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -136,7 +156,8 @@ class UserListView(generics.ListAPIView):
         parameters=[{'name': 'email', 'type': 'string', 'in': 'query', 'description': 'Filter by email'}]
     )
     def get(self, request, *args, **kwargs):
-        if request.user.role != 'admin':
+        is_admin = IsAdminUser().has_permission(request, self)
+        if not is_admin:
             queryset = User.objects.filter(id=request.user.id)
         else:
             queryset = User.objects.all()
@@ -153,7 +174,8 @@ class UserUpdateView(generics.UpdateAPIView):
     lookup_field = 'id'
 
     def get_queryset(self):
-        if self.request.user.role == 'admin':
+        is_admin = IsAdminUser().has_permission(self.request, self)
+        if is_admin:
             return User.objects.all()
         return User.objects.filter(id=self.request.user.id)
 
@@ -162,8 +184,7 @@ class UserUpdateView(generics.UpdateAPIView):
         responses={200: UserSerializer, 403: "Permission denied", 404: "Not found"}
     )
     def put(self, request, *args, **kwargs):
-        # Enable partial updates
-        partial = kwargs.pop('partial', True)  # Set partial=True by default
+        partial = kwargs.pop('partial', True)
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)

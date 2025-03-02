@@ -90,3 +90,233 @@ C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serial
 Watching for file changes with StatReloader
 C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Unauthorized: /users/
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: CustomUser() got unexpected keyword arguments: 'role'
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+User admin1@example.com registered successfully
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+User admin@example.com registered successfully
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Internal Server Error: /users/login/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py", line 72, in post
+    return Response({"token": token.key, "role": user.role}, status=status.HTTP_200_OK)
+                                                 ^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'role'
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Internal Server Error: /users/login/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py", line 72, in post
+    return Response({"token": token.key, "role": user.role}, status=status.HTTP_200_OK)
+                                                 ^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'role'
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Forbidden: /accounts/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /accounts/
+Forbidden: /accounts/
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\migrations\0002_alter_customuser_managers_remove_customuser_username.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Unauthorized: /users/
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Unauthorized: /accounts/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: accounts_account.name
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: accounts_account.name
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'testuser123@example.com', 'password': 'test123'}
+User testuser123@example.com registered successfully
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: accounts_account.name
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123'}
+User admin12@example.com registered successfully
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+User admin@example.com registered successfully
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Registration attempt with data: {'email': 'newuser@example.com', 'password': 'admin123'}
+User newuser@example.com registered successfully
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='This field is required.', code='required')]}
+Bad Request: /users/invite/
+Not Found: /accounts/1/
+Bad Request: /accounts/5/members/
+Forbidden: /accounts/1/destinations/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Invite attempt by admin.updated@example.com for: inviteduser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Invite attempt by admin.updated@example.com for: inviteduser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Invite attempt by admin.updated@example.com for: newuser@example.com
+Existing user newuser@example.com found
