@@ -1,8 +1,8 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-from .models import Account, AccountMember, Destination
-from .serializers import AccountSerializer, AccountMemberSerializer, DestinationSerializer
+from .models import Account, AccountMember
+from .serializers import AccountSerializer, AccountMemberSerializer
 from users.permissions import IsAdminUser, IsAccountMember
 from drf_spectacular.utils import extend_schema
 
@@ -45,31 +45,3 @@ class AccountMemberListCreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(account_id=self.kwargs['account_id'])
-
-class DestinationListCreateView(generics.ListCreateAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated, IsAccountMember]
-    serializer_class = DestinationSerializer
-
-    def get_queryset(self):
-        account_id = self.kwargs['account_id']
-        queryset = Destination.objects.filter(account_id=account_id)
-        url = self.request.query_params.get('url')
-        if url:
-            queryset = queryset.filter(url__icontains=url)
-        return queryset
-
-    def perform_create(self, serializer):
-        serializer.save(account_id=self.kwargs['account_id'])
-
-class DestinationUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated, IsAccountMember]
-    serializer_class = DestinationSerializer
-    lookup_field = 'id'
-
-    def get_queryset(self):
-        is_admin = IsAdminUser().has_permission(self.request, self)
-        if is_admin:
-            return Destination.objects.all()
-        return Destination.objects.filter(account__members__user=self.request.user)
