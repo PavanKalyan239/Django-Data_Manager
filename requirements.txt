@@ -1,0 +1,14 @@
+# pip install django djangorestframework djangorestframework-simplejwt drf-yasg celery redis psycopg2-binary django-ratelimit
+celery==5.4.0
+Django==5.1.6
+django-ratelimit==4.1.0
+djangorestframework==3.15.2
+djangorestframework_simplejwt==5.5.0
+drf-yasg==1.21.9
+psycopg2-binary==2.9.10
+redis==5.2.1
+djoser==2.3.1
+django-filter==25.1
+django-cors-headers==4.7.0
+django-celery-results==2.5.1
+drf-spectacular==0.28.0

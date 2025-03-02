@@ -1,0 +1,1321 @@
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'testuser@example.com', 'password': 'test123', 'role': 'user'}
+User testuser@example.com registered successfully
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123', 'role': 'admin'}
+Invalid registration data: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+Bad Request: /users/register/
+Registration attempt with data: {'email': 'admin123@example.com', 'password': 'admin123', 'role': 'admin'}
+User admin123@example.com registered successfully
+Unauthorized: /users/login/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Login attempt for email: testuser@example.com
+User testuser@example.com logged in successfully
+Unauthorized: /users/login/
+Logout attempt for user: testuser@example.com
+Logout successful
+Invite attempt by admin123@example.com for: testuser@example.com
+Existing user testuser@example.com found
+Invite attempt by admin123@example.com for: newuser@example.com
+New user newuser@example.com invited (no email sent)
+Unauthorized: /users/invite/
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /users/invite/
+Invite attempt by admin123@example.com for: newuser@example.com
+New user newuser@example.com invited (no email sent)
+Unauthorized: /users/login/
+Registration attempt with data: {'email': 'testuser@example.com', 'password': 'test123', 'role': 'user'}
+Invalid registration data: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+Bad Request: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /users/logout/
+Unauthorized: /users/logout/
+Unauthorized: /users/logout/
+Unauthorized: /users/login/
+Registration attempt with data: {'email': 'testuser@example.com', 'password': 'test123', 'role': 'user'}
+Invalid registration data: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+Bad Request: /users/register/
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123', 'role': 'admin'}
+User admin12@example.com registered successfully
+Login attempt for email: testuser@example.com
+User testuser@example.com logged in successfully
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'test@example.com', 'password': 'test123'}
+Registration failed: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x000001E0F8531130>": "CustomUser.created_by" must be a "CustomUser" instance.
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'test@example.com', 'password': 'test123'}
+User test@example.com registered successfully
+Registration attempt with data: {'email': 'user1@example.com', 'password': 'user123'}
+User user1@example.com registered successfully
+Registration attempt with data: {'email': 'invalid', 'password': 'short'}
+Invalid registration data: {'email': [ErrorDetail(string='Invalid email format', code='invalid'), ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+Bad Request: /users/register/
+Login attempt for email: test@example.com
+User test@example.com logged in successfully
+Logout attempt for user: test@example.com
+Logout successful
+Unauthorized: /users/logout/
+Unauthorized: /users/invite/
+Unauthorized: /users/invite/
+Registration attempt with data: {'email': 'test2@example.com', 'password': 'test123'}
+User test2@example.com registered successfully
+Login attempt for email: test2@example.com
+User test2@example.com logged in successfully
+Invite attempt by test2@example.com for: newuser@example.com
+New user newuser@example.com invited (no email sent)
+Bad Request: /users/8/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Unauthorized: /users/
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: CustomUser() got unexpected keyword arguments: 'role'
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+User admin1@example.com registered successfully
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+User admin@example.com registered successfully
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Internal Server Error: /users/login/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py", line 72, in post
+    return Response({"token": token.key, "role": user.role}, status=status.HTTP_200_OK)
+                                                 ^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'role'
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Internal Server Error: /users/login/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py", line 72, in post
+    return Response({"token": token.key, "role": user.role}, status=status.HTTP_200_OK)
+                                                 ^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'role'
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Forbidden: /accounts/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /accounts/
+Forbidden: /accounts/
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\migrations\0002_alter_customuser_managers_remove_customuser_username.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Unauthorized: /users/
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Unauthorized: /accounts/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: accounts_account.name
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: accounts_account.name
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\users\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'testuser123@example.com', 'password': 'test123'}
+User testuser123@example.com registered successfully
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Watching for file changes with StatReloader
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: users_customuser.email
+Internal Server Error: /users/register/
+Registration attempt with data: {'email': 'admin1@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123'}
+Registration failed: Role matching query does not exist.
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123'}
+Registration failed: UNIQUE constraint failed: accounts_account.name
+Internal Server Error: /users/register/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin12@example.com', 'password': 'admin123'}
+User admin12@example.com registered successfully
+Using proactor: IocpProactor
+Registration attempt with data: {'email': 'admin@example.com', 'password': 'admin123'}
+User admin@example.com registered successfully
+Login attempt for email: admin@example.com
+User admin@example.com logged in successfully
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Registration attempt with data: {'email': 'newuser@example.com', 'password': 'admin123'}
+User newuser@example.com registered successfully
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Invite attempt by admin@example.com for: newuser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='This field is required.', code='required')]}
+Bad Request: /users/invite/
+Not Found: /accounts/1/
+Bad Request: /accounts/5/members/
+Forbidden: /accounts/1/destinations/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Invite attempt by admin.updated@example.com for: inviteduser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Invite attempt by admin.updated@example.com for: inviteduser@example.com
+Invalid invite data: {'account_id': [ErrorDetail(string='Account does not exist', code='invalid')]}
+Bad Request: /users/invite/
+Invite attempt by admin.updated@example.com for: newuser@example.com
+Existing user newuser@example.com found
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001DBE9132CC0>> raised: NameError("name 'TokenAuthentication' is not defined")
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\celery\fixups\django.py", line 140, in validate_models
+    run_checks()
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\checks\urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py", line 25, in <module>
+    path('destinations/', include('destinations.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\urls.py", line 3, in <module>
+    from .views import DataHandlerView, DestinationListCreateView, DestinationUpdateDestroyView, LogListView
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 12, in <module>
+    class DataHandlerView(APIView):
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 13, in DataHandlerView
+    authentication_classes = [TokenAuthentication]
+                              ^^^^^^^^^^^^^^^^^^^
+NameError: name 'TokenAuthentication' is not defined
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000229032B1760>> raised: ModuleNotFoundError("No module named 'ratelimit'")
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\checks\urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py", line 25, in <module>
+    path('destinations/', include('destinations.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\urls.py", line 2, in <module>
+    from .views import DataHandlerView, DestinationListCreateView, DestinationUpdateDestroyView, LogListView
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 13, in <module>
+    from ratelimit.decorators import ratelimit
+ModuleNotFoundError: No module named 'ratelimit'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\celery\fixups\django.py", line 140, in validate_models
+    run_checks()
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\checks\urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py", line 25, in <module>
+    path('destinations/', include('destinations.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\urls.py", line 2, in <module>
+    from .views import DataHandlerView, DestinationListCreateView, DestinationUpdateDestroyView, LogListView
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 13, in <module>
+    from ratelimit.decorators import ratelimit
+ModuleNotFoundError: No module named 'ratelimit'
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+Not Found: /server/incoming_data/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /server/incoming_data/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 36, in post
+    account = Account.objects.get(members__user=request.user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+accounts.models.Account.MultipleObjectsReturned: get() returned more than one Account -- it returned 2!
+Watching for file changes with StatReloader
+Internal Server Error: /server/incoming_data/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 36, in post
+    account = Account.objects.get(members__user=request.user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+accounts.models.Account.MultipleObjectsReturned: get() returned more than one Account -- it returned 2!
+Login attempt for email: admin@example.com
+Invalid login credentials
+Unauthorized: /users/login/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Not Found: /accounts/5/destinations/
+Bad Request: /server/incoming_data/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /server/incoming_data/
+Not Found: /server/incoming_data/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\urls.py changed, reloading.
+Watching for file changes with StatReloader
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Bad Request: /server/incoming_data/
+Internal Server Error: /server/incoming_data/
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\fields\__init__.py", line 2761, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\AppData\Local\Programs\Python\Python312\Lib\uuid.py", line 178, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py", line 41, in post
+    account = Account.objects.get(members__user=request.user, app_secret_token=app_secret_token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\fields\__init__.py", line 2745, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jkottala\Envs\Django\Lib\site-packages\django\db\models\fields\__init__.py", line 2763, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“invalid-token” is not a valid UUID.']
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Account 7 has no destinations.
+Bad Request: /server/incoming_data/
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Unauthorized: /accounts/7/destinations/
+Using proactor: IocpProactor
+Not Found: /accounts/7/destinations/3/
+Not Found: /accounts/7/destinations/3/
+Not Found: /accounts/5/destinations/3/
+Not Found: /accounts/6/destinations/3/
+Not Found: /accounts/7/destinations/3/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Using proactor: IocpProactor
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Watching for file changes with StatReloader
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+Unexpected error while verifying CL-X-TOKEN: ['“<uuid-from-account-5>” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+Unexpected error while verifying CL-X-TOKEN: ['“invalid-token” is not a valid UUID.']
+Internal Server Error: /server/incoming_data/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+Unexpected error while verifying CL-X-TOKEN: badly formed hexadecimal UUID string
+Internal Server Error: /server/incoming_data/
+Watching for file changes with StatReloader
+Unexpected error while verifying CL-X-TOKEN: badly formed hexadecimal UUID string
+Internal Server Error: /server/incoming_data/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /server/incoming_data/
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+Watching for file changes with StatReloader
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\data_manager\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+Too Many Requests: /server/incoming_data/
+Too Many Requests: /server/incoming_data/
+Too Many Requests: /server/incoming_data/
+Too Many Requests: /server/incoming_data/
+Too Many Requests: /server/incoming_data/
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+C:\Users\jkottala\OneDrive - Cisco\Desktop\Mine\Django\data_manager\destinations\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def send_to_destination(log_id):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
