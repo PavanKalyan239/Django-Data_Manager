@@ -1,4 +1,4 @@
-# destinations/views.py
+# destinations/views.py (full file with LogListView updated)
 import uuid
 import logging
 from rest_framework.views import APIView
@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.throttling import UserRateThrottle  # Add DRF throttling
+from rest_framework.throttling import UserRateThrottle
 from .models import Destination, Log
 from accounts.models import Account
 from .serializers import DestinationSerializer, LogSerializer
@@ -14,13 +14,14 @@ from users.permissions import IsAccountMember, IsAdminUser
 from .tasks import send_to_destination
 from drf_spectacular.utils import extend_schema
 from django.core.cache import cache
+from django.utils.dateparse import parse_datetime  # For timestamp filtering
 
 logger = logging.getLogger(__name__)
 
 class DataHandlerView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    throttle_classes = [UserRateThrottle]  # Apply DRF throttling
+    throttle_classes = [UserRateThrottle]
 
     @extend_schema(
         request={'type': 'object'},
@@ -123,11 +124,36 @@ class LogListView(generics.ListAPIView):
         queryset = cache.get(cache_key)
         if not queryset:
             queryset = Log.objects.filter(account_id=account_id)
+            # Existing filters
             status = self.request.query_params.get('status')
             event_id = self.request.query_params.get('event_id')
+            # New filters
+            destination_id = self.request.query_params.get('destination_id')
+            received_timestamp_gte = self.request.query_params.get('received_timestamp__gte')
+            received_timestamp_lte = self.request.query_params.get('received_timestamp__lte')
+
             if status:
                 queryset = queryset.filter(status=status)
             if event_id:
                 queryset = queryset.filter(event_id__icontains=event_id)
+            if destination_id:
+                try:
+                    queryset = queryset.filter(destination_id=int(destination_id))
+                except ValueError:
+                    logger.warning(f"Invalid destination_id: {destination_id}")
+                    # Return empty queryset or raise error as needed
+            if received_timestamp_gte:
+                parsed_gte = parse_datetime(received_timestamp_gte)
+                if parsed_gte:
+                    queryset = queryset.filter(received_timestamp__gte=parsed_gte)
+                else:
+                    logger.warning(f"Invalid received_timestamp__gte: {received_timestamp_gte}")
+            if received_timestamp_lte:
+                parsed_lte = parse_datetime(received_timestamp_lte)
+                if parsed_lte:
+                    queryset = queryset.filter(received_timestamp__lte=parsed_lte)
+                else:
+                    logger.warning(f"Invalid received_timestamp__lte: {received_timestamp_lte}")
+
             cache.set(cache_key, queryset, timeout=300)  # 5 minutes
         return queryset
