@@ -129,7 +129,13 @@ curl -X POST -H "Content-Type: application/json" -d "{\"email\":\"user@example.c
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"email\":\"user@example.com\",\"password\":\"pass123\"}" http://127.0.0.1:8000/users/login/
 ```
-Copy the token from the response.
+Copy the token and id from the response.
+
+### Get CL-X-TOKEN (App Secret Token):
+```bash
+curl -X GET -H "Authorization: Token <your-token>" http://127.0.0.1:8000/accounts/{id}/
+```
+Copy the app_secret_token(CL-X-TOKEN) from the response
 
 ### Send Data:
 ```bash
